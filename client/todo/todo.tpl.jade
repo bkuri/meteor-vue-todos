@@ -1,0 +1,40 @@
+#demo
+  h1 [[title | uppercase]]: [[todos.length]]
+
+  form(
+    novalidate
+    v-on:submit.prevent='addTodo'
+  )
+    input#newTodo(
+      placeholder='Add/filter todos...'
+      required
+      v-model='newTodo'
+    )
+    
+    button(type='submit') Add [[newTodo ? "'" + newTodo + "' " : '']]Todo
+
+  ul
+    li(
+      id='[[todo._id]]'
+      track-by='_id'
+      v-bind:class='{done: todo.done}'
+      v-for='todo in todos | filterBy newTodo'
+    )
+      span [[todo.text]]
+
+      a(
+        v-if='todo.done'
+        v-on:click.prevent='removeTodo(todo._id)'
+      ) [&#10007;]
+      
+      a(
+        v-else
+        v-on:click.prevent='markDone(todo._id)'
+      ) [&#10003;]
+
+  button.js-load-more-button(
+    v-if='subscriptionsReady'
+    v-on:click.prevent='loadMore'
+  ) Load more
+
+  h1(v-else) Loading...
