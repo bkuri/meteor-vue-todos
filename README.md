@@ -9,4 +9,4 @@ A TODO-style example that uses:
 -	[Jade](http://jade-lang.com)
 -	[Stylus](http://stylus-lang.com)
 
-Copied many aspects from [niallobrien/meteor-vue-example](https://github.com/niallobrien/meteor-vue-example).
+Copied many aspects from [niallobrien/meteor-vue-example](https://github.com/niallobrien/meteor-vue-example) (updated to work the latest Meteor and Vue versions).
