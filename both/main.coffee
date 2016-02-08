@@ -10,7 +10,8 @@ Meteor.methods
     return
 
   markDone: (_id, done=yes) =>
-    return @Todos.update _id, $set: {done}
+    @Todos.update _id, $set: {done}
+    return
 
   removeTodo: (_id) =>
     @Todos.remove _id

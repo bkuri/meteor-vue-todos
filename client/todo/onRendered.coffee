@@ -3,7 +3,7 @@
 
 Template.todo.onRendered =>
   new Vue
-    el: '#demo'
+    el: '#todos'
 
     data:
       limit: @limit.get()

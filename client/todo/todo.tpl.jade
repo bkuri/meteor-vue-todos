@@ -1,10 +1,7 @@
-#demo
+#todos
   h1 [[title | uppercase]]: [[todos.length]]
 
-  form(
-    novalidate
-    v-on:submit.prevent='addTodo'
-  )
+  form(v-on:submit.prevent='addTodo')
     input#newTodo(
       placeholder='Add/filter todos...'
       required
@@ -32,9 +29,9 @@
         v-on:click.prevent='markDone(todo._id)'
       ) [&#10003;]
 
-  button.js-load-more-button(
+  button(
     v-if='subscriptionsReady'
     v-on:click.prevent='loadMore'
   ) Load more
 
-  h1(v-else) Loading...
+  h3(v-else) Loading...
